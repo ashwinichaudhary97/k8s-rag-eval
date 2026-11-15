@@ -1,0 +1,35 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+
+# Data and corpus (never commit raw data or indexes)
+data/raw/
+corpus/
+*.jsonl
+
+# Results (per-run outputs; the README table is the deliverable)
+results/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Vector index directories
+chroma_db/
+faiss_index/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

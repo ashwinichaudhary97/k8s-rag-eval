@@ -1,0 +1,14 @@
+# Gitleaks configuration for k8s-rag-eval
+#
+# corpus_manifest.json contains SHA256 hashes of Kubernetes documentation files.
+# SHA256 hex strings are high-entropy and trigger the generic-api-key rule,
+# producing ~100 false positives per scan. We allowlist the file globally.
+# All default gitleaks rules remain active for every other file.
+
+[extend]
+useDefault = true
+
+[allowlist]
+paths = [
+  '''corpus_manifest\.json''',
+]

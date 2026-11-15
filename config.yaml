@@ -1,0 +1,36 @@
+# config.yaml
+# Single source of truth for all tunable parameters.
+# Any value that appears in an ablation run must come from here.
+
+corpus:
+  manifest_path: "corpus_manifest.json"
+  docs_directory: "data/raw/k8s/content/en/docs"
+
+chunking:
+  strategy: "fixed"              # fixed | parent_child
+  chunk_size: 512                # tokens
+  chunk_overlap: 64              # tokens
+
+embedding:
+  model_name: "all-MiniLM-L6-v2"
+  batch_size: 32
+
+retrieval:
+  top_k: 10
+  vector_store: "faiss"          # faiss | chromadb
+
+evaluation:
+  golden_set_path: "data/eval/golden.jsonl"
+  heldout_set_path: "data/eval/heldout.jsonl"
+  recall_k: 10
+  ndcg_k: 10
+
+judge:
+  model_name: "llama-3.3-70b-versatile"
+  provider: "groq"
+  temperature: 0
+  runs: 3                        # median of N runs
+
+paths:
+  results_dir: "results"
+  index_dir: "chroma_db"
