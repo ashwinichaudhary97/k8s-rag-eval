@@ -1,7 +1,7 @@
 [project]
 name = "k8s-rag-eval"
 version = "0.1.0"
-description = "Drift-aware RAG over Kubernetes v1.36 documentation with CI-gated evaluation."
+description = "Evaluation-gated RAG over Kubernetes v1.36 documentation with CI-gated evaluation."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
